@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="studyPlanner.css">
+    <title>Student Study Planner</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        
+        <h1>𝓢𝓽𝓾𝓭𝓮𝓷𝓽 𝓢𝓽𝓾𝓭𝔂 𝓟𝓵𝓪𝓷𝓷𝓮𝓻</h1>
+    </div>
+</header>
+
+<main>
+
+<section id="welcomeSection">
+    <div class="container">
+        <h2>Welcome</h2>
+        <p>Enter your name to continue.</p>
+        <label for="nameInput">Your Name</label>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="continueBtn" type="button">Continue</button>
+        <p id="welcomeMessage"></p>
+    </div>
+</section>
+
+<section id="dashboard" class="hidden">
+
+<nav class="nav">
+    <div class="welcome-area"></div>
+    <button id="menuBtn" class="menu-toggle" type="button">☰</button>
+    <div class="right-nav">
+        <button class="nav-btn active" data-content="myTasks" type="button">My Tasks</button>
+        <button class="nav-btn" data-content="studyTips" type="button">Study Tips</button>
+        <button class="nav-btn" id="aboutbtn" data-content="about" type="button">About</button>
+        <button id="logoutBtn" type="button">Logout</button>
+    </div>
+</nav>
+
+<section id="myTasks" class="content-section">
+    <div class="study-layout">
+
+        <aside class="task-sidebar">
+            <div class="section-heading">
+                <h2>Add Task</h2>
+                <p>Create a new study task.</p>
+            </div>
+
+            <div class="task-form-card">
+                <form id="taskForm">
+
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title</label>
+                        <input type="text" id="taskTitle" placeholder="e.g. Prepare DBMS Chapter 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskSubject">Subject</label>
+                        <input type="text" id="taskSubject" placeholder="e.g. Database Systems">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskStatus">Task Status</label>
+                        <select id="taskStatus">
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button id="addBtn" type="button">Add Task</button>
+                    </div>
+
+                </form>
+
+                <p id="taskMessage" class="message"></p>
+            </div>
+        </aside>
+
+        <main class="tasks-main">
+
+            <div class="section-heading">
+                <h2>My Tasks</h2>
+                <p>Manage your study tasks.</p>
+            </div>
+
+            <div class="task-filters">
+                <button class="filter-btn active" type="button" data-filter="all">All Tasks</button>
+                <button class="filter-btn" type="button" data-filter="pending">Pending</button>
+                <button class="filter-btn" type="button" data-filter="completed">Completed</button>
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <div id="emptyTaskMessage" class="empty-message">
+                <h3>No Tasks Available</h3>
+                <p>You don't have any study tasks yet. Add your first task from the sidebar.</p>
+            </div>
+
+        </main>
+
+    </div>
+</section>
+
+<section id="studyTips" class="content-section hidden">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Study Tips</h2>
+            <p>Simple techniques to make your study sessions more productive.</p>
+        </div>
+
+        <div class="information-card">
+            <p contenteditable="true">Create a realistic study schedule and divide large topics into smaller and manageable sections.</p>
+            <p contenteditable="true">Take short breaks during long study sessions. Short breaks can help you maintain your concentration and avoid mental fatigue.</p>
+            <p contenteditable="true">Review difficult topics regularly instead of waiting until the day before an exam.</p>
+            <p contenteditable="true">Practice what you learn by solving problems, writing code, and building small projects.</p>
+            <p contenteditable="true">Keep track of your progress and celebrate small achievements to stay motivated.</p>
+        </div>
+
+        <div class="paragraph-info">
+            <p>Total Paragraphs:</p>
+        </div>
+
+        <button id="readingModeBtn" type="button">Enable Reading Mode</button>
+
+    </div>
+</section>
+
+<section id="about" class="content-section hidden">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>About Planner</h2>
+            <p>Learn more about the Student Study Planner.</p>
+        </div>
+
+        <div class="information-card">
+            <p class="about-intro">Student Study Planner is a simple web application designed to help students organize their academic tasks, manage their study activities, and keep track of daily learning progress in one place.</p>
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80" alt="Study desk">
+            <p>Students can create study tasks by entering a task title, selecting a subject, and choosing the current status of the task. This makes it easier to organize different subjects and keep important study activities under control.</p>
+            <p>Tasks can be edited or deleted whenever required. Students can also filter their tasks and view only pending or completed tasks, making it easier to focus on the work that still needs to be completed.</p>
+            <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80" alt="Student planning">
+            <p>The application uses browser localStorage to save each student's tasks. This means that the tasks remain available even after refreshing the page, allowing students to continue their planning without losing their tasks.</p>
+            <p>The planner also provides useful study tips, paragraph counting, and a reading mode to make the application more useful and comfortable for students during their study sessions.</p>
+        </div>
+
+    </div>
+</section>
+
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>2026 Student Study Planner</p>
+    </div>
+</footer>
+
+<script src="studyPlanner.js"></script>
+
+</body>
+</html>
